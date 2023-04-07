@@ -10,7 +10,6 @@ from threading import Thread, Lock
 import openpyxl
 
 
-##№Класс, создающий файл Excel
 def worker(item: {}):
     print(f"Начало работы над элементом с id {item['id']}"
           f" в {datetime.datetime.now().strftime('%d.%m.%Y %H:%M:%S')}")

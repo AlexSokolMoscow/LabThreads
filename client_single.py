@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+import time
 
 
 async def create(number):
@@ -15,9 +16,12 @@ async def create(number):
 
 async def main():
     tasks = []
-    for number in range(1):
+    start_time = time.time()
+    for number in range(4):
         tasks.append(asyncio.create_task(create(number)))
     result = await asyncio.gather(*tasks)
+    end_time = time.time()
+    print("Время работы программы :", end_time - start_time)
     tasks.clear()
 
 asyncio.run(main())
